@@ -4,7 +4,7 @@ services:
     build:
       context: ./express-service
     ports:
-      - '3000:3000'
+      - '3200:3200'
     depends_on:
       - python
 
