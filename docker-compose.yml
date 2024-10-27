@@ -1,0 +1,14 @@
+version: '3'
+services:
+  express-service:
+    build:
+      context: ./express-service
+    ports:
+      - '3000:3000'
+    depends_on:
+      - python
+
+  python:
+    build:
+      context: ./python
+    command: python python_script.py
