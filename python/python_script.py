@@ -5,11 +5,11 @@ from sentence_transformers import SentenceTransformer
 
 # Load the Sentence Transformer model
 model = SentenceTransformer('all-MiniLM-L6-v2')  # You can choose other models as well
-embedding_model = SentenceTransformerEmbedding(model)
+#embedding_model = SentenceTransformerEmbedding(model)
 
 # Loading
 loader = TextLoader('instruct.txt')
-index = VectorstoreIndexCreator(embedding=embedding_model).from_loaders([loader])
+index = VectorstoreIndexCreator(embedding=model.encode).from_loaders([loader])
 
 # Get the query from command line arguments
 query = sys.argv[1]
