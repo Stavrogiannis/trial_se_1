@@ -1,3 +1,4 @@
 langchain
 langchain-community
-openai
+sentence-transformers
+torch  # Required for Sentence Transformers
